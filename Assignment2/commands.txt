@@ -1,0 +1,5 @@
+hduser@dheeraj-VirtualBox:~/Documents/Assignment2/src/maxLog$ javac fileread.java
+hduser@dheeraj-VirtualBox:~/Documents/Assignment2/src/maxLog$ java fileread.java
+10.82.30.199 -> 63
+hduser@dheeraj-VirtualBox:~/Documents/Assignment2/src/maxLog$ 
+

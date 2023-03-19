@@ -1,0 +1,222 @@
+hduser@dheeraj-VirtualBox:~/Documents/Assignment1$ jar -cvf wordCnt.jar -C classes .
+added manifest
+adding: wordCnt/(in = 0) (out= 0)(stored 0%)
+adding: wordCnt/CntMapper.class(in = 1473) (out= 639)(deflated 56%)
+adding: wordCnt/CntMain.class(in = 1442) (out= 779)(deflated 45%)
+adding: wordCnt/CntReducer.class(in = 1595) (out= 665)(deflated 58%)
+hduser@dheeraj-VirtualBox:~/Documents/Assignment1$ hadoop jar wordCnt.jar wordCnt.CntMain /Assignment1/input/file.txt /Assignment1/output
+2023-03-15 11:06:23,067 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-03-15 11:06:23,587 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2023-03-15 11:06:23,701 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2023-03-15 11:06:23,701 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+Exception in thread "main" org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://localhost:9000/Assignment1/output already exists
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:164)
+	at org.apache.hadoop.mapreduce.JobSubmitter.checkSpecs(JobSubmitter.java:277)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:143)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1571)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1568)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:423)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1568)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1589)
+	at wordCnt.CntMain.main(CntMain.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:323)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:236)
+	
+	
+	
+hduser@dheeraj-VirtualBox:~/Documents/Assignment1$ hadoop jar wordCnt.jar wordCnt.CntMain /Assignment1/input/file.txt /Assignment1/result
+2023-03-15 11:06:42,023 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-03-15 11:06:42,582 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2023-03-15 11:06:42,688 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2023-03-15 11:06:42,688 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2023-03-15 11:06:42,891 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2023-03-15 11:06:43,052 INFO input.FileInputFormat: Total input files to process : 1
+2023-03-15 11:06:43,144 INFO mapreduce.JobSubmitter: number of splits:1
+2023-03-15 11:06:43,323 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local1038637832_0001
+2023-03-15 11:06:43,325 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2023-03-15 11:06:43,472 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+2023-03-15 11:06:43,473 INFO mapreduce.Job: Running job: job_local1038637832_0001
+2023-03-15 11:06:43,477 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+2023-03-15 11:06:43,482 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-03-15 11:06:43,482 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-03-15 11:06:43,483 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2023-03-15 11:06:43,551 INFO mapred.LocalJobRunner: Waiting for map tasks
+2023-03-15 11:06:43,552 INFO mapred.LocalJobRunner: Starting task: attempt_local1038637832_0001_m_000000_0
+2023-03-15 11:06:43,580 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-03-15 11:06:43,583 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-03-15 11:06:43,623 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2023-03-15 11:06:43,625 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/Assignment1/input/file.txt:0+12
+2023-03-15 11:06:43,693 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2023-03-15 11:06:43,693 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2023-03-15 11:06:43,693 INFO mapred.MapTask: soft limit at 83886080
+2023-03-15 11:06:43,693 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2023-03-15 11:06:43,696 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2023-03-15 11:06:43,705 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2023-03-15 11:06:43,800 INFO mapred.LocalJobRunner: 
+2023-03-15 11:06:43,801 INFO mapred.MapTask: Starting flush of map output
+2023-03-15 11:06:43,801 INFO mapred.MapTask: Spilling map output
+2023-03-15 11:06:43,801 INFO mapred.MapTask: bufstart = 0; bufend = 20; bufvoid = 104857600
+2023-03-15 11:06:43,801 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214392(104857568); length = 5/6553600
+2023-03-15 11:06:43,869 INFO mapred.MapTask: Finished spill 0
+2023-03-15 11:06:43,878 INFO mapred.Task: Task:attempt_local1038637832_0001_m_000000_0 is done. And is in the process of committing
+2023-03-15 11:06:43,888 INFO mapred.LocalJobRunner: map
+2023-03-15 11:06:43,888 INFO mapred.Task: Task 'attempt_local1038637832_0001_m_000000_0' done.
+2023-03-15 11:06:43,906 INFO mapred.Task: Final Counters for attempt_local1038637832_0001_m_000000_0: Counters: 23
+	File System Counters
+		FILE: Number of bytes read=3091
+		FILE: Number of bytes written=642418
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=12
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=5
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=1
+		Map output records=2
+		Map output bytes=20
+		Map output materialized bytes=30
+		Input split bytes=113
+		Combine input records=0
+		Spilled Records=2
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=10
+		Total committed heap usage (bytes)=350224384
+	File Input Format Counters 
+		Bytes Read=12
+2023-03-15 11:06:43,907 INFO mapred.LocalJobRunner: Finishing task: attempt_local1038637832_0001_m_000000_0
+2023-03-15 11:06:43,916 INFO mapred.LocalJobRunner: map task executor complete.
+2023-03-15 11:06:43,920 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+2023-03-15 11:06:43,921 INFO mapred.LocalJobRunner: Starting task: attempt_local1038637832_0001_r_000000_0
+2023-03-15 11:06:43,931 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-03-15 11:06:43,931 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-03-15 11:06:43,931 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2023-03-15 11:06:43,948 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@6691627
+2023-03-15 11:06:43,950 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2023-03-15 11:06:43,964 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=1934832384, maxSingleShuffleLimit=483708096, mergeThreshold=1276989440, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2023-03-15 11:06:43,982 INFO reduce.EventFetcher: attempt_local1038637832_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2023-03-15 11:06:44,002 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1038637832_0001_m_000000_0 decomp: 26 len: 30 to MEMORY
+2023-03-15 11:06:44,003 INFO reduce.InMemoryMapOutput: Read 26 bytes from map-output for attempt_local1038637832_0001_m_000000_0
+2023-03-15 11:06:44,004 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 26, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->26
+2023-03-15 11:06:44,005 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2023-03-15 11:06:44,006 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-03-15 11:06:44,006 INFO reduce.MergeManagerImpl: finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2023-03-15 11:06:44,033 INFO mapred.Merger: Merging 1 sorted segments
+2023-03-15 11:06:44,037 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 18 bytes
+2023-03-15 11:06:44,056 INFO reduce.MergeManagerImpl: Merged 1 segments, 26 bytes to disk to satisfy reduce memory limit
+2023-03-15 11:06:44,056 INFO reduce.MergeManagerImpl: Merging 1 files, 30 bytes from disk
+2023-03-15 11:06:44,057 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2023-03-15 11:06:44,057 INFO mapred.Merger: Merging 1 sorted segments
+2023-03-15 11:06:44,057 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 18 bytes
+2023-03-15 11:06:44,057 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-03-15 11:06:44,091 INFO Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2023-03-15 11:06:44,152 INFO mapred.Task: Task:attempt_local1038637832_0001_r_000000_0 is done. And is in the process of committing
+2023-03-15 11:06:44,155 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-03-15 11:06:44,155 INFO mapred.Task: Task attempt_local1038637832_0001_r_000000_0 is allowed to commit now
+2023-03-15 11:06:44,185 INFO output.FileOutputCommitter: Saved output of task 'attempt_local1038637832_0001_r_000000_0' to hdfs://localhost:9000/Assignment1/result
+2023-03-15 11:06:44,189 INFO mapred.LocalJobRunner: reduce > reduce
+2023-03-15 11:06:44,189 INFO mapred.Task: Task 'attempt_local1038637832_0001_r_000000_0' done.
+2023-03-15 11:06:44,191 INFO mapred.Task: Final Counters for attempt_local1038637832_0001_r_000000_0: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=3183
+		FILE: Number of bytes written=642448
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=12
+		HDFS: Number of bytes written=16
+		HDFS: Number of read operations=10
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=3
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2
+		Reduce shuffle bytes=30
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=2
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=350224384
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=16
+2023-03-15 11:06:44,192 INFO mapred.LocalJobRunner: Finishing task: attempt_local1038637832_0001_r_000000_0
+2023-03-15 11:06:44,192 INFO mapred.LocalJobRunner: reduce task executor complete.
+2023-03-15 11:06:44,482 INFO mapreduce.Job: Job job_local1038637832_0001 running in uber mode : false
+2023-03-15 11:06:44,484 INFO mapreduce.Job:  map 100% reduce 100%
+2023-03-15 11:06:44,485 INFO mapreduce.Job: Job job_local1038637832_0001 completed successfully
+2023-03-15 11:06:44,492 INFO mapreduce.Job: Counters: 36
+	File System Counters
+		FILE: Number of bytes read=6274
+		FILE: Number of bytes written=1284866
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=24
+		HDFS: Number of bytes written=16
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=1
+		Map output records=2
+		Map output bytes=20
+		Map output materialized bytes=30
+		Input split bytes=113
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2
+		Reduce shuffle bytes=30
+		Reduce input records=2
+		Reduce output records=2
+		Spilled Records=4
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=10
+		Total committed heap usage (bytes)=700448768
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=12
+	File Output Format Counters 
+		Bytes Written=16
+hduser@dheeraj-VirtualBox:~/Documents/Assignment1$ hdfs dfs -cat /Assignment1/result/*
+2023-03-15 11:08:21,276 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hello	1
+world	1
+
+
+
+
+er@dheeraj-VirtualBox:~/eclipse-workspace/Assignment_1/src/wordCnt$ javac -d /home/hduser/Documents/Assignment1/classes CntMapper.java CntReducer.java CntMain.java -cp $(hadoop classpath)
+
+
+hduser@dheeraj-VirtualBox:~/Documents/Assignment1$ jar -cvf wordCnt.jar -C classes .
