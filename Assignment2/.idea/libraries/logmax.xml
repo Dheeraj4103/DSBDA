@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="logmax">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/logmax.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
